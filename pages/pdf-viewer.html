@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PDF Viewer</title>
+
+    <style>
+
+        html,
+        body {
+
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+
+        }
+
+        #pdfViewer {
+
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <iframe id="pdfViewer"
+            title="PDF Viewer">
+    </iframe>
+
+
+    <script>
+
+        (function () {
+
+            const viewer = document.getElementById("pdfViewer");
+
+            const params = new URLSearchParams(window.location.search);
+
+            const pdf = params.get("pdf");
+
+            if (!pdf) {
+
+                document.body.innerHTML = "";
+
+                return;
+
+            }
+
+
+            /*
+             * Only allow PDFs from the Xendows assets/pdfs directory.
+             * This prevents arbitrary external URLs from being loaded.
+             */
+
+            const decodedPDF = decodeURIComponent(pdf);
+
+            const allowedPattern =
+                /^(\.\.\/)?assets\/pdfs\/[a-zA-Z0-9_\-]+\.pdf$/;
+
+
+            if (!allowedPattern.test(decodedPDF)) {
+
+                document.body.innerHTML = "";
+
+                return;
+
+            }
+
+
+            viewer.src = decodedPDF;
+
+        })();
+
+    </script>
+
+</body>
+
+</html>

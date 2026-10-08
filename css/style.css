@@ -1,0 +1,937 @@
+/* =========================================================
+   XENDOWS
+   Main Website CSS
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background-color: #eeeeee;
+
+    color: #6f2dbd;
+
+    font-family: "Lora", serif;
+
+    font-weight: 700;
+
+    padding-bottom: 60px;
+
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
+.main-nav {
+
+    width: 100%;
+    height: 66px;
+
+    background-color: #333333;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 0 20px;
+
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+
+    color: #8a2be2;
+
+    font-family: "Candal", serif;
+
+    font-weight: 700;
+
+    font-size: 24px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
+.nav-links {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.nav-links a {
+
+    width: 100px;
+
+    padding: 9px 10px;
+
+    text-align: center;
+
+    color: #8a2be2;
+
+    text-decoration: none;
+
+    font-family: "Candal", serif;
+
+    font-weight: 700;
+
+    border-radius: 15px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.nav-links a:hover {
+
+    background-color: #4b0082;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   PROFILE BADGE
+   ========================================================= */
+
+.profile-container {
+
+    margin-left: auto;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.profile-badge {
+
+    width: 30px;
+
+    height: 30px;
+
+    border: 2px solid #8a2be2;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+}
+
+
+.profile-badge img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.profile-tooltip {
+
+    position: absolute;
+
+    top: 42px;
+
+    right: 0;
+
+    width: max-content;
+
+    max-width: 220px;
+
+    padding: 7px 12px;
+
+    border: 2px solid #8a2be2;
+
+    border-radius: 15px;
+
+    background-color: #eeeeee;
+
+    color: #8a2be2;
+
+    font-family: "Lora", serif;
+
+    font-weight: 700;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: 0.2s ease;
+
+    z-index: 1000;
+
+}
+
+
+.profile-container:hover .profile-tooltip {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
+.hamburger {
+
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    width: 35px;
+
+    height: 35px;
+
+    padding: 5px;
+
+}
+
+
+.hamburger span {
+
+    display: block;
+
+    width: 25px;
+
+    height: 3px;
+
+    margin: 5px auto;
+
+    background-color: #8a2be2;
+
+}
+
+
+/* =========================================================
+   SCROLLING NOTICE
+   ========================================================= */
+
+.notice-bar {
+
+    width: 100%;
+
+    height: 30px;
+
+    background-color: #dddddd;
+
+    border-bottom: 1px solid #333333;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.notice-text {
+
+    white-space: nowrap;
+
+    display: inline-block;
+
+    color: #8a2be2;
+
+    font-family: "Lora", serif;
+
+    font-weight: 700;
+
+    padding-left: 100%;
+
+    animation: scrollingText 20s linear infinite;
+
+}
+
+
+@keyframes scrollingText {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform: translateX(-100%);
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.content {
+
+    width: 100%;
+
+    padding: 30px 20px 80px;
+
+}
+
+
+.cards-container {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   NOTE / COURSE CARD
+   ========================================================= */
+
+.note-card {
+
+    width: 100%;
+
+    border: 2px solid #8a2be2;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    background-color: #eeeeee;
+
+}
+
+
+.image-area {
+
+    width: 100%;
+
+    height: 250px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.image-area img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.note-title {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 7px 10px;
+
+    background-color: rgba(238, 238, 238, 0.55);
+
+    color: #8a2be2;
+
+    font-family: "Lora", serif;
+
+    font-weight: 700;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+   ========================================================= */
+
+.card-actions {
+
+    border-top: 2px solid #8a2be2;
+
+    padding: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.card-actions a {
+
+    width: 100%;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: #dddddd;
+
+    background-color: #8a2be2;
+
+    border-radius: 15px;
+
+    font-family: "Candal", serif;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+
+}
+
+
+.card-actions a:hover {
+
+    background-color: #4b0082;
+
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-content {
+
+    width: 100%;
+
+    padding: 30px 20px 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.about-box {
+
+    width: 90%;
+
+    border: 2px solid #8a2be2;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    position: relative;
+
+    color: #8a2be2;
+
+}
+
+
+.about-box h2 {
+
+    position: absolute;
+
+    top: -16px;
+
+    left: 25px;
+
+    padding: 0 10px;
+
+    background-color: #eeeeee;
+
+    color: #8a2be2;
+
+    font-family: "Candal", serif;
+
+    font-weight: 700;
+
+}
+
+
+.about-box p {
+
+    font-family: "Lora", serif;
+
+    font-weight: 700;
+
+    line-height: 1.8;
+
+    text-align: justify;
+
+}
+
+
+/* =========================================================
+   FIXED APP LINKS
+   ========================================================= */
+
+.app-links {
+
+    position: fixed;
+
+    bottom: 12px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    white-space: nowrap;
+
+}
+
+
+.app-links a {
+
+    color: #8a2be2;
+
+    text-decoration: none;
+
+    font-family: "Candal", serif;
+
+    font-weight: 700;
+
+}
+
+
+.app-links span {
+
+    color: #000000;
+
+    font-family: "Candal", serif;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   MOBILE VIEW - 760px
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+
+    /* -----------------------------------------------------
+       MAIN NAV
+       ----------------------------------------------------- */
+
+    .main-nav {
+
+        height: 66px;
+
+        padding: 0 15px;
+
+        justify-content: center;
+
+    }
+
+
+    /* -----------------------------------------------------
+       HAMBURGER
+       ----------------------------------------------------- */
+
+    .hamburger {
+
+        display: block;
+
+        position: absolute;
+
+        left: 10px;
+
+        top: 15px;
+
+        z-index: 1100;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE LOGO
+       ----------------------------------------------------- */
+
+    .logo {
+
+        font-family: "Candal", serif;
+
+        font-weight: 700;
+
+        font-size: 22px;
+
+        text-align: center;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE NAVIGATION
+       ----------------------------------------------------- */
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 66px;
+
+        left: 0;
+
+        transform: none;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background-color: #eeeeee;
+
+        z-index: 1000;
+
+    }
+
+
+    .nav-links.active {
+
+        display: flex;
+
+    }
+
+
+    .nav-links a {
+
+        width: 100%;
+
+        height: 50px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 0;
+
+        color: #8a2be2;
+
+        font-family: "Candal", serif;
+
+        font-weight: 700;
+
+        text-align: center;
+
+    }
+
+
+    .nav-links a:hover {
+
+        background-color: #4b0082;
+
+        color: #ffffff;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PROFILE
+       ----------------------------------------------------- */
+
+    .profile-container {
+
+        position: absolute;
+
+        right: 15px;
+
+        top: 18px;
+
+        margin-left: 0;
+
+    }
+
+
+    .profile-tooltip {
+
+        right: 0;
+
+        top: 40px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       NOTICE
+       ----------------------------------------------------- */
+
+    .notice-bar {
+
+        height: 30px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENT
+       ----------------------------------------------------- */
+
+    .content {
+
+        padding: 25px 15px 80px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       ONE CARD PER LINE
+       ----------------------------------------------------- */
+
+    .cards-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       CARD
+       ----------------------------------------------------- */
+
+    .note-card {
+
+        width: 100%;
+
+        border-radius: 15px;
+
+    }
+
+
+    .image-area {
+
+        height: 250px;
+
+    }
+
+
+    .note-title {
+
+        min-height: 42px;
+
+        font-family: "Lora", serif;
+
+        font-weight: 700;
+
+    }
+
+
+    .card-actions {
+
+        width: 100%;
+
+        padding: 10px;
+
+        gap: 10px;
+
+    }
+
+
+    .card-actions a {
+
+        width: 100%;
+
+        height: 42px;
+
+        border-radius: 15px;
+
+        font-family: "Candal", serif;
+
+        font-weight: 700;
+
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
+    .about-content {
+
+        padding: 30px 0 90px;
+
+        gap: 25px;
+
+    }
+
+
+    .about-box {
+
+        width: 90%;
+
+        padding: 30px 20px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .about-box h2 {
+
+        left: 20px;
+
+    }
+
+
+    .about-box p {
+
+        font-family: "Lora", serif;
+
+        font-weight: 700;
+
+        line-height: 1.8;
+
+        text-align: justify;
+
+    }
+
+
+    /* -----------------------------------------------------
+       APP LINKS
+       ----------------------------------------------------- */
+
+    .app-links {
+
+        bottom: 10px;
+
+        gap: 10px;
+
+    }
+
+
+    .app-links a {
+
+        font-family: "Candal", serif;
+
+        font-weight: 700;
+
+    }
+
+
+    .app-links span {
+
+        font-family: "Candal", serif;
+
+        font-weight: 700;
+
+    }
+
+}
